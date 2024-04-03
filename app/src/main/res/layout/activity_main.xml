@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/TextView_contador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="316dp"
+        android:layout_marginBottom="20dp"
+        android:textAppearance="@style/Base.Theme.Workout"
+        android:textSize="70sp"
+        tools:text="10:00" />
+
+    <ProgressBar
+        android:id="@+id/indeterminate_progress_native"
+        style="@style/Widget.MaterialProgressBar.ProgressBar"
+        android:layout_width="348dp"
+        android:layout_height="332dp"
+        android:minHeight="306dp"
+        android:minWidth="306dp"
+        android:layout_below="@id/TextView_contador"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginBottom="20dp"
+        android:indeterminate="true" />
+
+    <LinearLayout
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginBottom="143dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/fab_play"
+            android:layout_width="48dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="40dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/play_ic"></androidx.appcompat.widget.AppCompatImageButton>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/fab_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/pause" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/fab_stop"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Encerrar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/play" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
