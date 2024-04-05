@@ -1,83 +1,107 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
+    <FrameLayout
+        android:id="@+id/flTimer"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.308">
+
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/blue_progressbar_background"
+            android:indeterminate="false"
+            android:max="10"
+            android:progress="10"
+            android:progressDrawable="@drawable/blue_progressbar_background"
+            android:rotation="90">
+
+        </ProgressBar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/max_blue"
+                android:textSize="26sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="seg tempo falta "
+                android:textColor="@color/max_blue"
+                android:textSize="20sp">
+
+            </TextView>
+        </LinearLayout>
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/btnAdd"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/white"
+        android:src="@drawable/ic_mais"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flTimer" />
+
     <TextView
-        android:id="@+id/TextView_contador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="316dp"
-        android:layout_marginBottom="20dp"
-        android:textAppearance="@style/Base.Theme.Workout"
-        android:textSize="70sp"
-        tools:text="10:00" />
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="160dp"
+        android:text="+15s"
+        android:textColor="@color/max_blue"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <ProgressBar
-        android:id="@+id/indeterminate_progress_native"
-        style="@style/Widget.MaterialProgressBar.ProgressBar"
-        android:layout_width="348dp"
-        android:layout_height="332dp"
-        android:minHeight="306dp"
-        android:minWidth="306dp"
-        android:layout_below="@id/TextView_contador"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="196dp"
-        android:layout_marginBottom="20dp"
-        android:indeterminate="true" />
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="160dp"
+        android:background="@color/white"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <LinearLayout
-        android:layout_width="307dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="284dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginBottom="143dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="52dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="22sp"
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/fab_play"
-            android:layout_width="48dp"
-            android:layout_height="37dp"
-            android:layout_marginLeft="40dp"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/play_ic"></androidx.appcompat.widget.AppCompatImageButton>
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/fab_pause"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/pause" />
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/fab_stop"
-            android:layout_width="38dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="Encerrar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/play" />
-
-    </LinearLayout>
-
-</RelativeLayout>
-
-
+        android:text="Começar"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
