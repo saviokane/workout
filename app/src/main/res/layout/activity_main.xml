@@ -19,6 +19,7 @@
         app:layout_constraintVertical_bias="0.308">
 
         <ProgressBar
+            android:id="@+id/pbTimer"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -39,6 +40,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tvTimerLeft"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -47,7 +49,9 @@
                 android:textSize="26sp"
                 android:textStyle="bold"></TextView>
 
+
             <TextView
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -71,6 +75,7 @@
         app:layout_constraintTop_toBottomOf="@id/flTimer" />
 
     <TextView
+        android:id="@+id/tv_addTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -80,9 +85,10 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
+        android:id="@+id/btnReset"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginEnd="64dp"
@@ -94,14 +100,16 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ib_btnPlayPause"
         android:layout_width="284dp"
+        android:background="@drawable/button_bg"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="52dp"
-        android:textStyle="bold"
+        android:text="Começar"
         android:textColor="@color/white"
         android:textSize="22sp"
-
-        android:text="Começar"
-        />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
